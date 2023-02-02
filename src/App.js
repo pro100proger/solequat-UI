@@ -1,13 +1,14 @@
 import './App.css';
 import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
+import Main from "./pages/main/main";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/">
-
+          <Route path="/" element={<Main/>}>
+              <Route path="main" element={<Main/>}/>
           </Route>
         </Routes>
       </BrowserRouter>
