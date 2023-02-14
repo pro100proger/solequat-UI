@@ -1,0 +1,23 @@
+.logo-auxiliary-container-1 {
+    margin-left: 40px;
+    padding-top: 10px;
+    width: 190px;
+}
+
+.logo-logo-and-text {
+    width: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 49px;
+
+    background: linear-gradient(90deg, #FFCE76 0%, #E79560 39.57%, #D2644E 65.8%, #BA2B38 88.32%, rgba(17, 0, 0, 0.0677083) 88.33%, #BA2B38 88.34%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
