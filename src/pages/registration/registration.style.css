@@ -1,23 +1,23 @@
-.login-page {
+.registration-page {
     height: 100vh;
     background: #2B0909;
 }
-.login-two-sides-container {
+.registration-two-sides-container {
     display: flex;
     justify-content: space-between;
 }
 
 
-.login-left-panel {
+.registration-left-panel {
     width: 50%;
 }
-.login-auxiliary-container {
-    margin: 20% auto;
+.registration-auxiliary-container {
+    margin: 12% auto 0 auto;
     width: 360px;
 
     color: #D4D9E2;
 }
-.login-title {
+.registration-title {
     text-align: center;
 
     font-family: 'Montserrat', sans-serif;
@@ -32,12 +32,12 @@
 }
 
 
-.login-sign-up {
+.registration-sign-in {
     margin: 20px 0;
     display: flex;
     justify-content: center;
 }
-.login-text-for-link {
+.registration-text-for-link {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -46,7 +46,7 @@
 
     color: #FFCE76;
 }
-.login-button-for-link {
+.registration-button-for-link {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -60,11 +60,11 @@
     border: none;
 }
 
-.login-form-container .custom-input {
+.registration-form-container .custom-input {
     padding-bottom: 15px;
 }
 
-.login-button-sign-in {
+.registration-button-sign-in {
     width: 360px;
     height: 50px;
     margin-top: 20px;
@@ -84,15 +84,10 @@
 
 
 
-.login-right-gradient {
+.registration-right-gradient {
     width: 50%;
     height: 100vh;
     background-image: url('../../icons/LoginGradient.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
-}
-
-.input_error {
-    margin: 5px;
-    color: #D72130;
 }
