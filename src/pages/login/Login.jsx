@@ -31,7 +31,7 @@ const Login = () => {
             password: user.password
         };
         try {
-            const response = await axios.post("http://localhost:8765/login", sendUser)
+            const response = await axios.post("http://localhost:8765/business-logic/api/v1/registration/authenticate", sendUser)
             localStorage.setItem('user', JSON.stringify(response.data))
             navigate("/main");
         } catch(error) {

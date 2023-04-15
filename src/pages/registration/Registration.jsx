@@ -11,7 +11,8 @@ const Registration = () => {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [user, setUser] = useState({
-        Username: "",
+        firstName: "",
+        lastName: "",
         email: "",
         password: "",
         confirmPassword: ""
@@ -27,15 +28,17 @@ const Registration = () => {
     function registerUser(user) {
         console.log("registerUser");
         const sendUser = {
-            Username: user.Username,
+            firstName: user.firstName,
+            lastName: user.lastName,
             email: user.email,
             password: user.password
         };
-        axios.post("http://localhost:8765/api/v1/registration", sendUser)
+        axios.post("http://localhost:8765/business-logic/api/v1/registration", sendUser)
             .then((response) => {
+                login()
             })
             .catch((error) => {
-                if (error.response) {
+                if (error) {
                     console.log(error.response);
                     console.log("error.response.status: ", error.response.status);
                 }
@@ -46,7 +49,6 @@ const Registration = () => {
         event.preventDefault()
         if (isValid()) {
             registerUser(user)
-            login()
         } else {
             console.log(errors);
         }
@@ -54,8 +56,11 @@ const Registration = () => {
 
     const validateInput = data => {
         let errors = {}
-        if (!/^[A-Za-z]{3,32}$/.test(data.Username)) {
-            errors.Username = "Username must contain only letters"
+        if (!/^[A-Za-z]{3,32}$/.test(data.firstName)) {
+            errors.firstName = "Username must contain only letters"
+        }
+        if (!/^[A-Za-z]{3,32}$/.test(data.lastName)) {
+            errors.lastName = "Username must contain only letters"
         }
         if (!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             .test(data.email)) {
@@ -110,15 +115,26 @@ const Registration = () => {
                         </div>
 
                         <form className="registration-form-container">
-                            {errors.Username && <p className='input_error'>
-                                {errors.Username}
+                            {errors.firstName && <p className='input_error'>
+                                {errors.firstName}
                             </p>}
                             <CustomInput
                                 type="text"
-                                label={"Username"}
-                                name={"Username"}
-                                placeholder={"Enter username"}
-                                value={user.Username}
+                                label={"First name"}
+                                name={"firstName"}
+                                placeholder={"Enter first name"}
+                                value={user.firstName}
+                                handleChange={handleChange}
+                            />
+                            {errors.lastName && <p className='input_error'>
+                                {errors.lastName}
+                            </p>}
+                            <CustomInput
+                                type="text"
+                                label={"Last name"}
+                                name={"lastName"}
+                                placeholder={"Enter last name"}
+                                value={user.lastName}
                                 handleChange={handleChange}
                             />
                             {errors.email && <p className='input_error'>
