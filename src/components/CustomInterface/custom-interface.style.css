@@ -1,0 +1,71 @@
+.custom-interface-container {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+
+    margin: 2px 2px auto;
+    color: #FFCE76;
+
+    border-radius: 1%;
+    padding: 5px 10px;
+
+    background-color: #3B1B19;
+}
+
+.custom-interface-circles {
+    display: flex;
+    justify-content: space-between;
+}
+
+.custom-interface-yellow-circle {
+    width: 1px;
+    height: 1px;
+    border: 1px solid #2B0909;
+    background-color: #FFFF56;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.custom-interface-empty-circle {
+    width: 1px;
+    height: 1px;
+    border: 1px solid #2B0909;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.custom-interface-green-circle {
+    width: 1px;
+    height: 1px;
+    border: 1px solid #C1C5CB;
+    background-color: #A8FF50;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.custom-interface-name {
+    padding: 10px;
+    justify-content: space-between;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.custom-interface-interface {
+    padding: 0 10px 10px 10px;
+    justify-content: space-between;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.custom-interface-time {
+    padding-bottom: 5px;
+}
+
