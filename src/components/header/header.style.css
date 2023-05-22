@@ -2,5 +2,11 @@
     width: 100%;
     height: 70px;
     background: #2B0909;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
 }
 
+.header-custom-profile {
+
+}
