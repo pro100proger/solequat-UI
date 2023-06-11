@@ -8,7 +8,7 @@ const CustomDetailInterface = ({detailInterface}) => {
 
     const handleDownloadResult = () => {
         console.log("getResultById");
-        return axios.get("http://localhost:8765/api/v1/result?id=" + detailInterface.result_id, {
+        return axios.get("http://localhost:8765/business-logic/api/v1/result?id=" + detailInterface.result_id, {
             headers: {
                 authorization: "Bearer " + AuthToken["token"]
             }
@@ -34,7 +34,7 @@ const CustomDetailInterface = ({detailInterface}) => {
 
     const handleDownloadVector = () => {
         console.log("getVectorById");
-        return axios.get("http://localhost:8765/api/v1/vector?id=" + detailInterface.data_id, {
+        return axios.get("http://localhost:8765/business-logic/api/v1/vector?id=" + detailInterface.data_id, {
             headers: {
                 authorization: "Bearer " + AuthToken["token"]
             }
@@ -61,7 +61,7 @@ const CustomDetailInterface = ({detailInterface}) => {
     const handleDownloadMatrix = () => {
         console.log("getMatrixById");
         return axios
-            .get("http://localhost:8765/api/v1/matrix?id=" + detailInterface.data_id, {
+            .get("http://localhost:8765/business-logic/api/v1/matrix?id=" + detailInterface.data_id, {
                 headers: {
                     authorization: "Bearer " + AuthToken["token"],
                 },

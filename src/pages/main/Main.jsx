@@ -43,16 +43,13 @@ const Main = () => {
         })
     }
 
-    console.log(detailInterface)
-    console.log("detailInterface")
-
     function startCalculation(equation) {
         console.log("startCalculation");
         const formData = new FormData();
         formData.append('matrixFile', matrixFile);
         formData.append('vectorFile', vectorFile);
         console.log(formData)
-        return axios.post("http://localhost:8765/api/v1/equation", formData, {
+        return axios.post("http://localhost:8765/business-logic/api/v1/equation", formData, {
             headers: {
                 authorization: "Bearer " + AuthToken["token"]
             }
@@ -64,7 +61,6 @@ const Main = () => {
                     id: data.id,
                     start_calculation: data.startCalculation.substring(0, 19)
                 }])
-                console.log(response.data)
             })
             .catch((error) => {
                 if (error.response) {
@@ -84,7 +80,7 @@ const Main = () => {
 
     const handleClick = (id) => {
         console.log("getEquationById");
-        return axios.get("http://localhost:8765/api/v1/equation?id=" + id, {
+        return axios.get("http://localhost:8765/business-logic/api/v1/equation?id=" + id, {
             headers: {
                 authorization: "Bearer " + AuthToken["token"]
             }
@@ -98,8 +94,6 @@ const Main = () => {
                     data_id: data.dataId,
                     result_id: data.resultId
                 })
-                console.log("data")
-                console.log(response.data)
             })
             .catch((error) => {
                 if (error.response) {
@@ -116,14 +110,13 @@ const Main = () => {
 
     function getHistory() {
         console.log("getHistory");
-        return axios.get("http://localhost:8765/api/v1/equations", {
+        return axios.get("http://localhost:8765/business-logic/api/v1/equations", {
             headers: {
                 authorization: "Bearer " + AuthToken["token"]
             }
         })
             .then((response) => {
                 const data = response.data;
-                console.log(response.data)
                 const arrays = data.map(item => ({
                     id:item.id,
                     start_calculation: item.startCalculation.substring(0, 19),
@@ -132,7 +125,6 @@ const Main = () => {
                 }))
 
                 setInterfaces([...arrays])
-                console.log(response.data)
             })
             .catch((error) => {
                 if (error.response) {

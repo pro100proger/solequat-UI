@@ -33,7 +33,7 @@ const Registration = () => {
             email: user.email,
             password: user.password
         };
-        axios.post("http://localhost:8765/api/v1/registration", sendUser)
+        axios.post("http://localhost:8765/business-logic/api/v1/registration", sendUser)
             .then((response) => {
                 login()
             })

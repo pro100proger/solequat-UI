@@ -89,5 +89,5 @@
     height: 100vh;
     background-image: url('../../icons/LoginGradient.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
