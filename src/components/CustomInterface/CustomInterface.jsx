@@ -1,7 +1,5 @@
 import "./custom-interface.style.css";
-import React, {useEffect, useState} from "react";
 import CustomResultText from "../../components/CustomResultText/CustomResultText";
-import axios from "axios";
 
 const CustomInterface = ({id, start_calculation, end_calculation, onClick, ...otherProps}) => {
 

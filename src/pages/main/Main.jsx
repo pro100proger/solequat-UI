@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import CustomInterface from "../../components/CustomInterface/CustomInterface";
 import axios from "axios";
 import CustomDetailInterface from "../../components/CustomDetailInterface/CustomDetailInterface";
+import CustomResultText from "../../components/CustomResultText/CustomResultText";
 // import {ReactComponent as ImportCSV} from "../../icons/import-csv.svg";
 
 const Main = () => {
@@ -87,7 +88,7 @@ const Main = () => {
         })
             .then((response) => {
                 const data = response.data;
-                setDetailInterface( {
+                setDetailInterface({
                     duration: data.duration,
                     end_calculation: data.endCalculation.substring(0, 19),
                     start_calculation: data.startCalculation.substring(0, 19),
@@ -118,7 +119,7 @@ const Main = () => {
             .then((response) => {
                 const data = response.data;
                 const arrays = data.map(item => ({
-                    id:item.id,
+                    id: item.id,
                     start_calculation: item.startCalculation.substring(0, 19),
                     end_calculation: item.endCalculation.substring(0, 19),
                     duration: item.duration
@@ -147,10 +148,11 @@ const Main = () => {
 
                     <div className={"main-calculator"}>
                         <div className={"main-equations-solver"}>
-                            Online Systems of <span className={"main-span-color"}>Equations Solver</span>
+                            Online Systems of <span className={"main-span-orange"}>Equations Solver</span>
                         </div>
                         <div className={"main-tip"}>
-                            Please, select <span className={"main-span-color"}>matrix</span> and <span className={"main-span-color"}>vector</span> files then click on the <span className={"main-span-color"}>button</span> "Calculate" to start calculating your linear system
+                            Please, select matrix and vector files then click on the button "<span
+                            className={"main-span-yellow"}>Calculate</span>" to start calculating your linear system
                         </div>
 
                         <div className={"main-auxiliary-form-container"}>
@@ -168,12 +170,14 @@ const Main = () => {
                                 {/*</p>}*/}
                                 <div className={"main-select-file"}>
                                     <label className={"main-label-file"}>
-                                        <input className={"main-select-input"} type="file" accept=".csv" onChange={handleMatrixFileChange}/>
+                                        <input className={"main-select-input"} type="file" accept=".csv"
+                                               onChange={handleMatrixFileChange}/>
                                     </label>
                                 </div>
                                 <div className={"main-select-file"}>
                                     <label className={"main-label-file"}>
-                                        <input className={"main-select-input"} type="file" accept=".csv" onChange={handleVectorFileChange}/>
+                                        <input className={"main-select-input"} type="file" accept=".csv"
+                                               onChange={handleVectorFileChange}/>
                                     </label>
                                 </div>
                             </div>
@@ -203,13 +207,13 @@ const Main = () => {
                                 onClick={handleClick}
                                 key={index}
                             />)}
+
                         </div>
 
                         <div className={"main-details"}>
                             {detailInterface ? <CustomDetailInterface
                                 detailInterface={detailInterface}
                             /> : <div></div>}
-
 
                         </div>
                     </div>

@@ -35,14 +35,19 @@ html {
     text-align: center;
     padding-top: 25px;
     font-size: 30px;
+    color: #FFFFFF;
 }
-.main-span-color {
+.main-span-yellow {
+    color: #FFCE76;
+}
+.main-span-orange {
     color: #FF8E45;
 }
 .main-tip {
     text-align: center;
     padding-top: 30px;
     font-size: 22px;
+    color: #FFFFFF;
 }
 
 .main-auxiliary-form-container {
@@ -58,7 +63,7 @@ html {
     padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 50px;
-    color: #FF8E45;
+    color: #FFFFFF;
 }
 
 .main-auxiliary-import-files {
