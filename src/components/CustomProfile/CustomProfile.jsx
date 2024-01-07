@@ -16,10 +16,6 @@ const CustomProfile = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const navigate = useNavigate();
 
-    function signIn() {
-        navigate("/login");
-    }
-
     function signUp() {
         navigate("/registration");
     }
@@ -30,16 +26,15 @@ const CustomProfile = () => {
     }
 
     return (
-        <div className={"custom-profile-container"}>
+        <div className={"header-button"}>
 
             {getUserRole() === null ?
                 <div className='custom-profile-auxiliary'>
-                    <button className={"custom-profile-sign-in-up-out"} onClick={signUp}>Sign up</button>{' '}
-                    <button className={"custom-profile-sign-in-up-out"} onClick={signIn}>Sign in</button>{' '}
+                    <button className={"header-button-name"} onClick={signUp}>Sign up</button>{' '}
                 </div>
                 :
                 <div className="custom-profile-auxiliary">
-                    <button className={"custom-profile-sign-in-up-out"} onClick={logout}>Log out</button>{' '}
+                    <button className={"header-button-name"} onClick={logout}>Log out</button>{' '}
                 </div>
             }
         </div>

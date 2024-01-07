@@ -1,0 +1,27 @@
+.header-button {
+    height: 80px;
+    width: 140px;
+
+    border-left: #3B1B19 3px solid;
+    border-right: #3B1B19 3px solid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.header-button-name {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    cursor: pointer;
+
+    color: #FFCE76;
+    border: none;
+    background: none;
+}
+
+.header-button-name:hover {
+    transform: scale(1.2);
+}
