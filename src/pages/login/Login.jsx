@@ -127,6 +127,7 @@ const Login = () => {
                         </form>
 
                         <button className={"login-button-sign-in"} onClick={handleClick}>
+                            {/*<button className={"login-button-sign-in"} onClick={localStorage.setItem('user', JSON.stringify("sda"))}>*/}
                             Sign in
                         </button>
                     </div>
