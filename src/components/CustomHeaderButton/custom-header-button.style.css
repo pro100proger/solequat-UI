@@ -1,6 +1,6 @@
 .header-button {
     height: 80px;
-    width: 140px;
+    width: 160px;
 
     border-left: #3B1B19 3px solid;
     border-right: #3B1B19 3px solid;
@@ -12,7 +12,7 @@
 }
 .header-button-name {
     height: 80px;
-    width: 140px;
+    width: 160px;
 
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -31,10 +31,11 @@
     padding-left: 0;
 
     list-style: none;
+    border: #452015 2px solid;
 }
 .header-dropdown-button {
     height: 60px;
-    width: 146px;
+    width: 216px;
 
     display: flex;
     justify-content: center;
@@ -47,7 +48,7 @@
 
     color: #FFCE76;
     border: none;
-    background: #2F0E0D;
+    background: #260B0A;
 }
 .header-menu-button {
     right: 2px;
@@ -79,4 +80,11 @@ ul li button:hover {
 }
 .header-button-name:hover {
     transform: scale(1.2);
+}
+
+.red {
+    color: #BA2B38;
+}
+.white {
+    color: #FFFFFF;
 }

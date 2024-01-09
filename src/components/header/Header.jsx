@@ -13,6 +13,7 @@ const Header = () => {
     function main() {
         navigate("/main");
     }
+
     function help() {
         navigate("/help");
     }
@@ -24,16 +25,32 @@ const Header = () => {
 
             <div className={"header-buttons-container"}>
                 <CustomHeaderButton
-                    style={{ borderRight: '0px solid #3B1B19' }}
-                    buttonName = {"Main"}
-                    onClick = {main}
+                    style={{borderRight: '0px solid #3B1B19'}}
+                    buttonName={"Main"}
+                    onClick={main}
                 />
+                <div className="custom-profile-auxiliary-methods">
+                    <CustomHeaderButton
+                        style={{borderRight: '0px solid #3B1B19'}}
+                        buttonName={"Method"}
+                    />
+                    <div>
+                        <ul className={"header-dropdown-methods"}>
+                            <li>
+                                <button className={"header-dropdown-button-methods"}>Linear System</button>
+                            </li>
+                            <li>
+                                <button className={"header-dropdown-button-methods"}>Linear System</button>
+                            </li>
+                            <li>
+                                <button className={"header-dropdown-button-methods"}>Linear System</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
                 <CustomHeaderButton
-                    style={{ borderRight: '0px solid #3B1B19' }}
-                    buttonName = {"Method"}
-                />
-                <CustomHeaderButton
-                    buttonName = {"Help"}
+                    buttonName={"Help"}
                 />
 
             </div>

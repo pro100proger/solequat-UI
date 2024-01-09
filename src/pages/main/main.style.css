@@ -21,14 +21,14 @@ html {
 }
 .main-container {
     height: 100%;
-    padding: 100px 20px;
+    padding: 140px 20px;
 }
 .main-auxiliary-container {
     width: 1200px;
 
     border-radius: 12px;
     margin: 1px auto 0 auto;
-    background-color: #2F0E0D;
+    background-color: #260B0A;
 }
 
 .main-equations-solver {
