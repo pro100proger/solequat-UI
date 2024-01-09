@@ -1,5 +1,5 @@
 import "./main.style.css"
-import Header from "../../components/header/Header";
+import Header from "../../components/Header/Header";
 import React, {useEffect, useState} from "react";
 import CustomInterface from "../../components/CustomInterface/CustomInterface";
 import axios from "axios";
@@ -138,7 +138,7 @@ const Main = () => {
 
     return (
         <div className={"main-page"}>
-            <div className={"main-header"}>
+            <div>
                 <Header/>
             </div>
 

@@ -21,10 +21,11 @@ html {
 }
 .main-container {
     height: 100%;
-    padding: 140px 20px;
+    padding: 140px 20px 20px 0;
 }
 .main-auxiliary-container {
     width: 1200px;
+    min-height: 640px;
 
     border-radius: 12px;
     margin: 1px auto 0 auto;
@@ -120,7 +121,7 @@ html {
 
 .main-history-container {
     height: 75%;
-    min-height: 30vh;
+    min-height: 32vh;
 
     display: flex;
     justify-content: space-between;

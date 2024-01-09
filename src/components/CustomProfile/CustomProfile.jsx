@@ -20,6 +20,9 @@ const CustomProfile = () => {
         navigate("/registration");
     }
 
+    function profile() {
+        navigate("/profile");
+    }
     function logout() {
         localStorage.removeItem('user')
         navigate("/login");
@@ -44,7 +47,7 @@ const CustomProfile = () => {
 
                         <ul className={"header-dropdown"}>
                             <li>
-                                <button className={"header-dropdown-button"}>Profile</button>
+                                <button className={"header-dropdown-button"} onClick={profile}>Profile</button>
                             </li>
                             <li>
                                 <button className={"header-dropdown-button white"}>Settings</button>

@@ -51,6 +51,7 @@ const Header = () => {
                 </div>
                 <CustomHeaderButton
                     buttonName={"Help"}
+                    onClick={help}
                 />
 
             </div>
