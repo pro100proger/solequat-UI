@@ -1,6 +1,7 @@
 import "./profile.style.css"
 import Header from "../../components/Header/Header";
 import React, {useState} from "react";
+import CustomInput from "../../components/CustomInput/CustomInput";
 
 
 const Profile = () => {
@@ -32,12 +33,30 @@ const Profile = () => {
                     <div className={"profile-main-part"}>
                         {!changeCredentials ? (
                             <div>
-                                <div className={"test"}>
+                                <div className={"profile-preview-container"}>
+                                    <div className="custom-input retreat">
+                                        <label className="form-label" htmlFor="input">first name</label>
+                                        <br/>
+                                        <input className="form-input" id="input" disabled={true} value={"John"} />
+                                    </div>
 
+                                    <div className="custom-input retreat">
+                                        <label className="form-label" htmlFor="input">last name</label>
+                                        <br/>
+                                        <input className="form-input" id="input" disabled={true} value={"Stone"} />
+                                    </div>
+
+                                    <div className="custom-input retreat">
+                                        <label className="form-label" htmlFor="input">Email</label>
+                                        <br/>
+                                        <input className="form-input" id="input" disabled={true} value={"johnstone@gmail.com"} />
+                                    </div>
+
+                                    <button className={"profile-change-button"} onClick={() => setChangeCredentials(true)}>
+                                        Change
+                                    </button>
+                                    <div className={"retreat"} />
                                 </div>
-                                <button onClick={() => setChangeCredentials(true)}>
-                                    Change
-                                </button>
                             </div>
                         ) : (
                             <div>
