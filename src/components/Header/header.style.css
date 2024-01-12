@@ -2,6 +2,7 @@
     width: 100%;
     height: 80px;
     background: #260B0A;
+    border: #452015 1px solid;
     position: fixed;
     display: flex;
     justify-content: space-between;
