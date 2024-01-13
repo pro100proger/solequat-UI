@@ -5,10 +5,11 @@ import CustomInput from "../../components/CustomInput/CustomInput";
 import PasswordInput from "../../components/PasswordInput/PasswordInput";
 import PreviewOption from "../../components/PreviewOption/PreviewOption";
 import ChangeNameOption from "../../components/ChangeNameOption/ChangeNameOption";
+import ChangeEmailOption from "../../components/ChangeEmailOption/ChangeEmailOption";
 
 
 const Help = () => {
-    const [userChoice, setUserChoice] = useState('option1');
+    const [userChoice, setUserChoice] = useState('preview');
 
     const handleButtonClick = (choice) => {
         setUserChoice(choice);
@@ -16,26 +17,25 @@ const Help = () => {
 
     const renderContent = () => {
         switch (userChoice) {
-            case 'option1':
+            case 'preview':
                 return (
                     <div>
                         <PreviewOption />
                     </div>
                 );
-            case 'option2':
+            case 'changeName':
                 return (
                     <div>
                         <ChangeNameOption />
                     </div>
                 );
-            case 'option3':
+            case 'changeEmail':
                 return (
                     <div>
-                        {/* HTML для варіанту 3 */}
-                        <p>asdasd</p>
+                        <ChangeEmailOption />
                     </div>
                 );
-            case 'option4':
+            case 'changePassword':
                 return (
                     <div>
                         {/* HTML для варіанту 4 */}
@@ -72,10 +72,10 @@ const Help = () => {
                     <div className={"profile-main-part"}>
 
                         <div className={"profile-options-container"}>
-                            <button className={"profile-option-button"} onClick={() => handleButtonClick('option1')}>Preview</button>
-                            <button className={"profile-option-button"} onClick={() => handleButtonClick('option2')}>Change name</button>
-                            <button className={"profile-option-button"} onClick={() => handleButtonClick('option3')}>Change email</button>
-                            <button className={"profile-option-button"} onClick={() => handleButtonClick('option4')}>Change password</button>
+                            <button className={"profile-option-button"} onClick={() => handleButtonClick('preview')}>Preview</button>
+                            <button className={"profile-option-button"} onClick={() => handleButtonClick('changeName')}>Change name</button>
+                            <button className={"profile-option-button"} onClick={() => handleButtonClick('changeEmail')}>Change email</button>
+                            <button className={"profile-option-button"} onClick={() => handleButtonClick('changePassword')}>Change password</button>
                         </div>
 
                         <div className={"profile-render-content"}>

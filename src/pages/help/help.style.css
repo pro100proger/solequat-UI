@@ -1,6 +1,6 @@
 .profile-container {
     height: 100%;
-    padding: 140px 20px 70px 0;
+    padding: 110px 20px 70px 0;
 }
 .profile-auxiliary-container {
     width: 1200px;
@@ -46,7 +46,7 @@
 
 
 .profile-main-part {
-    min-height: 490px;
+    min-height: 520px;
     border-top: #452015 4px solid;
     border-bottom: #452015 4px solid;
 }
