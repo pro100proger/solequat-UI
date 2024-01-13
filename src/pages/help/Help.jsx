@@ -1,14 +1,14 @@
 import "./help.style.css"
 import Header from "../../components/Header/Header";
 import React, {useState} from "react";
-import {ReactComponent as Arrow} from "../../icons/Arrow.svg";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import PasswordInput from "../../components/PasswordInput/PasswordInput";
 import PreviewOption from "../../components/PreviewOption/PreviewOption";
+import ChangeNameOption from "../../components/ChangeNameOption/ChangeNameOption";
 
 
 const Help = () => {
-    const [userChoice, setUserChoice] = useState(null);
+    const [userChoice, setUserChoice] = useState('option1');
 
     const handleButtonClick = (choice) => {
         setUserChoice(choice);
@@ -25,8 +25,7 @@ const Help = () => {
             case 'option2':
                 return (
                     <div>
-                        {/* HTML для варіанту 2 */}
-                        <p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 2</p>
+                        <ChangeNameOption />
                     </div>
                 );
             case 'option3':

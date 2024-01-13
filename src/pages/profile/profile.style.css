@@ -91,27 +91,27 @@
     width: 1000px;
     background: #472115;
 }
-.profile-change-part-tips {
-    padding-left: 50px;
-    padding-top: 20px;
-    width: 900px;
+/*.profile-change-part-tips {*/
+/*    padding-left: 50px;*/
+/*    padding-top: 20px;*/
+/*    width: 900px;*/
 
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    color: #FFFFFF;
-}
-.profile-change-auxiliary {
-    padding-left: 50px;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    width: 900px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-}
+/*    font-family: 'Inter', sans-serif;*/
+/*    font-style: normal;*/
+/*    font-weight: 500;*/
+/*    font-size: 18px;*/
+/*    color: #FFFFFF;*/
+/*}*/
+/*.profile-change-auxiliary {*/
+/*    padding-left: 50px;*/
+/*    padding-top: 10px;*/
+/*    padding-bottom: 20px;*/
+/*    width: 900px;*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    text-align: left;*/
+/*}*/
 
 .profile-tips-container {
     text-align: center;

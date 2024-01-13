@@ -3,7 +3,6 @@ import Header from "../../components/Header/Header";
 import React, {useEffect, useState} from "react";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import PasswordInput from "../../components/PasswordInput/PasswordInput";
-import { ReactComponent as Arrow } from "../../icons/Arrow.svg";
 import axios from "axios";
 
 
@@ -162,7 +161,7 @@ const Profile = () => {
                             <div className={"profile-change-container"}>
                                 <div className={"profile-tips-container"}>
                                     <div className={"profile-back-arrow"} onClick={() => setChangeCredentials(false)}>
-                                        <Arrow/>
+
                                     </div>
                                     <div className={"profile-change-part-tips correct-padding-top"}>
                                         Here you can change your first and last name by typing it in the fields.

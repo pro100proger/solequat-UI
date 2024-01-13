@@ -1,0 +1,20 @@
+.change-name-container {
+
+}
+
+.change-name-tips {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+.change-name-auxiliary {
+    padding-left: 95px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.change-name-container .custom-input {
+    width: 360px;
+}

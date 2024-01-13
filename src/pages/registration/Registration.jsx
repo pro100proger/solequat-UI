@@ -40,7 +40,7 @@ const Registration = () => {
             .catch((error) => {
                 if (error) {
                     console.log(error.response);
-                    console.log("error.response.status: ", error.response.status);
+                    console.log("ERROR: ", error.response.status);
                 }
             });
     }
@@ -57,10 +57,10 @@ const Registration = () => {
     const validateInput = data => {
         let errors = {}
         if (!/^[A-Za-z]{3,32}$/.test(data.firstName)) {
-            errors.firstName = "Username must contain only letters"
+            errors.firstName = "Firstname must contain only letters(at least 3)"
         }
         if (!/^[A-Za-z]{3,32}$/.test(data.lastName)) {
-            errors.lastName = "Username must contain only letters"
+            errors.lastName = "Lastname must contain only letters(at least 3)"
         }
         if (!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             .test(data.email)) {
