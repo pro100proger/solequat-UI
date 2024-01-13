@@ -72,6 +72,10 @@ const Registration = () => {
         if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(data.confirmPassword)) {
             errors.confirmPassword = "Password must contain at least 8 characters (letters and numbers)"
         }
+        if (data.password !== data.confirmPassword) {
+            errors.password = "Password and confirmation password must match"
+            errors.confirmPassword = "Password and confirmation password must match"
+        }
         return {
             errors,
             isValid: JSON.stringify(errors) === '{}'

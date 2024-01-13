@@ -1,13 +1,109 @@
 import "./profile.style.css"
 import Header from "../../components/Header/Header";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import PasswordInput from "../../components/PasswordInput/PasswordInput";
 import { ReactComponent as Arrow } from "../../icons/Arrow.svg";
+import axios from "axios";
 
 
 const Profile = () => {
+    const AuthToken = JSON.parse(localStorage.getItem("user"));
     const [changeCredentials, setChangeCredentials] = useState(false);
+    const [errors, setErrors] = useState("");
+    const [userPreview, setUserPreview] = useState({
+        previewFirstName: "",
+        previewLastName: "",
+        previewEmail: ""
+    });
+
+    const [user, setUser] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        oldEmail: "",
+        password: "",
+        confirmPassword: "",
+        oldPassword: ""
+    });
+
+    function getUserCredentialsByEmail() {
+        console.log("getUserCredentialsByEmail");
+        return axios.get("http://localhost:8765/business-logic/api/v1/", {
+            headers: {
+                authorization: "Bearer " + AuthToken["token"]
+            }
+        })
+            .then((response) => {
+                const data = response.data;
+                setUserPreview({
+                    previewFirstName: data.firstName,
+                    previewLastName: data.lastName,
+                    previewEmail: data.email
+                })
+            })
+            .catch((error) => {
+                if (error.response) {
+                    console.log(error.message)
+                    console.log("error")
+                }
+            });
+    }
+
+    const handleChange = ({target: {name, value}}) => {
+        setUser({...user, [name]: value});
+        setErrors({...errors, [name]: ''});
+    };
+
+
+    const handleClick = event => {
+        event.preventDefault()
+        if (isValid()) {
+            console.log("ok");
+        } else {
+            console.log(errors);
+        }
+    }
+
+    const validateInput = data => {
+        let errors = {}
+        if (!/^[A-Za-z]{3,32}$/.test(data.firstName)) {
+            errors.firstName = "Username must contain only letters"
+        }
+        if (!/^[A-Za-z]{3,32}$/.test(data.lastName)) {
+            errors.lastName = "Username must contain only letters"
+        }
+        if (!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            .test(data.email)) {
+            errors.email = "Please enter valid email"
+        }
+        if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(data.password)) {
+            errors.password = "Password must contain at least 8 characters (letters and numbers)"
+        }
+        if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(data.confirmPassword)) {
+            errors.confirmPassword = "Password must contain at least 8 characters (letters and numbers)"
+        }
+        if (data.password !== data.confirmPassword) {
+            errors.password = "Password and confirmation password must match"
+            errors.confirmPassword = "Password and confirmation password must match"
+        }
+        return {
+            errors,
+            isValid: JSON.stringify(errors) === '{}'
+        }
+    }
+    const isValid = () => {
+        const {errors, isValid} = validateInput(user)
+        if (!isValid) {
+            setErrors(errors)
+        }
+        return isValid
+    }
+
+    useEffect(() => {
+        getUserCredentialsByEmail();
+    }, []);
+
 
 
     return (
@@ -39,19 +135,19 @@ const Profile = () => {
                                     <div className="custom-input retreat">
                                         <label className="form-label" htmlFor="input">first name</label>
                                         <br/>
-                                        <input className="form-input" id="input" disabled={true} value={"John"} />
+                                        <input className="form-input" id="input" disabled={true} value={userPreview.previewFirstName} />
                                     </div>
 
                                     <div className="custom-input retreat">
                                         <label className="form-label" htmlFor="input">last name</label>
                                         <br/>
-                                        <input className="form-input" id="input" disabled={true} value={"Stone"} />
+                                        <input className="form-input" id="input" disabled={true} value={userPreview.previewLastName} />
                                     </div>
 
                                     <div className="custom-input retreat">
                                         <label className="form-label" htmlFor="input">Email</label>
                                         <br/>
-                                        <input className="form-input" id="input" disabled={true} value={"johnstone@gmail.com"} />
+                                        <input className="form-input" id="input" disabled={true} value={userPreview.previewEmail} />
                                     </div>
 
                                     <button className={"profile-change-button"} onClick={() => setChangeCredentials(true)}>
@@ -77,16 +173,16 @@ const Profile = () => {
                                             label={"First name"}
                                             name={"firstName"}
                                             placeholder={"Enter first name"}
-                                            // value={user.firstName}
-                                            // handleChange={handleChange}
+                                            value={user.firstName}
+                                            handleChange={handleChange}
                                         />
                                         <CustomInput
                                             type="text"
                                             label={"Last name"}
                                             name={"lastName"}
                                             placeholder={"Enter last name"}
-                                            // value={user.lastName}
-                                            // handleChange={handleChange}
+                                            value={user.lastName}
+                                            handleChange={handleChange}
                                         />
                                     </div>
                                 </div>
@@ -105,16 +201,16 @@ const Profile = () => {
                                             label={"Old email"}
                                             name={"oldEmail"}
                                             placeholder={"Enter old email"}
-                                            // value={user.email}
-                                            // handleChange={handleChange}
+                                            value={user.oldEmail}
+                                            handleChange={handleChange}
                                         />
                                         <CustomInput
                                             type="text"
                                             label={"Email"}
                                             name={"email"}
                                             placeholder={"Enter new email"}
-                                            // value={user.email}
-                                            // handleChange={handleChange}
+                                            value={user.email}
+                                            handleChange={handleChange}
                                         />
                                     </div>
                                 </div>
@@ -131,15 +227,15 @@ const Profile = () => {
                                             label={"Password"}
                                             name={"password"}
                                             placeholder={"Enter password"}
-                                            // value={user.password}
-                                            // handleChange={handleChange}
+                                            value={user.password}
+                                            handleChange={handleChange}
                                         />
                                         <PasswordInput
                                             label={"Confirm password"}
                                             name={"confirmPassword"}
                                             placeholder={"Enter confirm password"}
-                                            // value={user.confirmPassword}
-                                            // handleChange={handleChange}
+                                            value={user.confirmPassword}
+                                            handleChange={handleChange}
                                         />
                                     </div>
 
@@ -148,10 +244,10 @@ const Profile = () => {
                                             label={"Old password"}
                                             name={"oldPassword"}
                                             placeholder={"Enter old password"}
-                                            // value={user.oldPassword}
-                                            // handleChange={handleChange}
+                                            value={user.oldPassword}
+                                            handleChange={handleChange}
                                         />
-                                        <button className={"profile-change-button"}>
+                                        <button className={"profile-change-button"} onClick={handleClick}>
                                             Change
                                         </button>
                                     </div>
