@@ -1,0 +1,12 @@
+.help-container {
+    height: 100%;
+    padding: 140px 20px 20px 0;
+}
+.help-auxiliary-container {
+    width: 1200px;
+    min-height: 640px;
+
+    border-radius: 12px;
+    margin: 1px auto 0 auto;
+    background-color: #260B0A;
+}

@@ -21,10 +21,11 @@ html {
 }
 .main-container {
     height: 100%;
-    padding: 140px 20px;
+    padding: 110px 20px 20px 0;
 }
 .main-auxiliary-container {
     width: 1200px;
+    min-height: 640px;
 
     border-radius: 12px;
     margin: 1px auto 0 auto;
@@ -35,7 +36,7 @@ html {
     text-align: center;
     padding-top: 25px;
     font-size: 30px;
-    color: #FFFFFF;
+    color: #D9D9D9;
 }
 .main-span-yellow {
     color: #FFCE76;
@@ -47,7 +48,7 @@ html {
     text-align: center;
     padding-top: 30px;
     font-size: 22px;
-    color: #FFFFFF;
+    color: #D9D9D9;
 }
 
 .main-auxiliary-form-container {
@@ -63,7 +64,7 @@ html {
     padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 50px;
-    color: #FFFFFF;
+    color: #D9D9D9;
 }
 
 .main-auxiliary-import-files {
@@ -120,7 +121,7 @@ html {
 
 .main-history-container {
     height: 75%;
-    min-height: 30vh;
+    min-height: 32vh;
 
     display: flex;
     justify-content: space-between;

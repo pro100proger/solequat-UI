@@ -36,7 +36,7 @@ const Login = () => {
             navigate("/main");
         } catch(error) {
             console.log(error.message)
-            console.log("error")
+            console.log("ERROR: ", error.response.status);
         }
     }
 
