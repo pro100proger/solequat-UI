@@ -11,9 +11,9 @@ const PreviewOption = () => {
         previewEmail: ""
     });
 
-    function getUserCredentialsByEmail() {
-        console.log("getUserCredentialsByEmail");
-        return axios.get("http://localhost:8765/business-logic/api/v1/", {
+    function getUserCredentials() {
+        console.log("getUserCredentials");
+        return axios.get("http://localhost:8765/business-logic/api/v1/credentials/username", {
             headers: {
                 authorization: "Bearer " + AuthToken["token"]
             }
@@ -22,7 +22,26 @@ const PreviewOption = () => {
                 const data = response.data;
                 setUserPreview({
                     previewFirstName: data.firstName,
-                    previewLastName: data.lastName,
+                    previewLastName: data.lastName
+                })
+            })
+            .catch((error) => {
+                if (error.response) {
+                    console.log(error.message)
+                    console.log("error")
+                }
+            });
+    }
+    function getUserEmail() {
+        console.log("getUserEmail");
+        return axios.get("http://localhost:8765/business-logic/api/v1/credentials/email", {
+            headers: {
+                authorization: "Bearer " + AuthToken["token"]
+            }
+        })
+            .then((response) => {
+                const data = response.data;
+                setUserPreview({
                     previewEmail: data.email
                 })
             })
@@ -35,7 +54,8 @@ const PreviewOption = () => {
     }
 
     useEffect(() => {
-        getUserCredentialsByEmail();
+        getUserCredentials();
+        getUserEmail();
     }, []);
 
     return (

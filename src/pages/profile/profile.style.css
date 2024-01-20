@@ -23,8 +23,8 @@
 
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
+    font-weight: 500;
+    font-size: 34px;
 }
 .profile-auxiliary-tips {
     width: 1200px;
@@ -33,15 +33,15 @@
     text-align: center;
 }
 .profile-tips {
-    width: 700px;
+    width: 900px;
     padding-top: 12px;
     padding-bottom: 20px;
 
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
-    color: #FFFFFF;
+    font-size: 18px;
+    color: #D9D9D9;
 }
 
 

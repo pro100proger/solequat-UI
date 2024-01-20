@@ -17,8 +17,8 @@ const ChangeNameOption = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const navigate = useNavigate();
 
-    function main() {
-        navigate("/main");
+    function profile() {
+        navigate("/profile");
     }
 
 
@@ -27,15 +27,15 @@ const ChangeNameOption = () => {
         setErrors({...errors, [name]: ''});
     };
 
-    function updateUserName(user) {
-        console.log("updateUserName");
-        return axios.put("http://localhost:8765/business-logic/api/v1/", user, {
+    function updateUsername(user) {
+        console.log("updateUsername");
+        return axios.put("http://localhost:8765/business-logic/api/v1/credentials/username", user, {
             headers: {
                 authorization: "Bearer " + AuthToken["token"]
             }
         })
             .then(() => {
-                main()
+                profile()
             })
             .catch((error) => {
                 if (error) {
@@ -48,7 +48,7 @@ const ChangeNameOption = () => {
     const handleClick = event => {
         event.preventDefault()
         if (isValid()) {
-            updateUserName(user);
+            updateUsername(user);
         } else {
             console.log(errors);
         }

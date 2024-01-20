@@ -36,7 +36,7 @@ html {
     text-align: center;
     padding-top: 25px;
     font-size: 30px;
-    color: #FFFFFF;
+    color: #D9D9D9;
 }
 .main-span-yellow {
     color: #FFCE76;
@@ -48,7 +48,7 @@ html {
     text-align: center;
     padding-top: 30px;
     font-size: 22px;
-    color: #FFFFFF;
+    color: #D9D9D9;
 }
 
 .main-auxiliary-form-container {
@@ -64,7 +64,7 @@ html {
     padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 50px;
-    color: #FFFFFF;
+    color: #D9D9D9;
 }
 
 .main-auxiliary-import-files {

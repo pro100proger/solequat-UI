@@ -29,7 +29,7 @@ const ChangePasswordOption = () => {
 
     function updateEmail(user) {
         console.log("updateEmail");
-        return axios.put("http://localhost:8765/business-logic/api/v1/", user, {
+        return axios.put("http://localhost:8765/business-logic/api/v1/credentials/password", user, {
             headers: {
                 authorization: "Bearer " + AuthToken["token"]
             }

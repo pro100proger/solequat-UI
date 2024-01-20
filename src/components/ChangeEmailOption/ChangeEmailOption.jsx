@@ -10,7 +10,7 @@ const ChangeEmailOption = () => {
     const [errors, setErrors] = useState("");
     const [user, setUser] = useState({
         oldEmail: "",
-        email: ""
+        newEmail: ""
     });
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -28,7 +28,7 @@ const ChangeEmailOption = () => {
 
     function updateEmail(user) {
         console.log("updateEmail");
-        return axios.put("http://localhost:8765/business-logic/api/v1/", user, {
+        return axios.put("http://localhost:8765/business-logic/api/v1/credentials/email", user, {
             headers: {
                 authorization: "Bearer " + AuthToken["token"]
             }
@@ -69,8 +69,8 @@ const ChangeEmailOption = () => {
             errors.oldEmail = "Please enter valid email"
         }
         if (!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-            .test(data.email)) {
-            errors.email = "Please enter valid email"
+            .test(data.newEmail)) {
+            errors.newEmail = "Please enter valid email"
         }
         return {
             errors,
@@ -94,15 +94,15 @@ const ChangeEmailOption = () => {
                     handleChange={handleChange}
                 />
                 <div className={"retreat"}/>
-                {errors.email && <p className='input_error'>
-                    {errors.email}
+                {errors.newEmail && <p className='input_error'>
+                    {errors.newEmail}
                 </p>}
                 <CustomInput
                     type="text"
                     label={"New email"}
-                    name={"email"}
+                    name={"newEmail"}
                     placeholder={"Enter new email"}
-                    value={user.email}
+                    value={user.newEmail}
                     handleChange={handleChange}
                 />
                 <button className={"profile-change-button"} onClick={handleClick}>

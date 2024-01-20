@@ -31,17 +31,17 @@ const CustomProfile = () => {
     return (
         <div>
             {getUserRole() === null ?
-                <div className={"header-button"} style={{ width: '210px'}}>
-                    <div className='custom-profile-auxiliary' style={{ width: '210px'}}>
-                        <button className={"header-button-name"} style={{ width: '210px'}} onClick={signUp}>Sign up</button>
+                <div className={"header-button"}>
+                    <div className='custom-profile-auxiliary'>
+                        <button className={"header-button-name"} onClick={signUp}>Sign up</button>
                         {' '}
                     </div>
                 </div>
                 :
-                <div className={"header-button"} style={{ width: '210px'}}>
+                <div className={"header-button"}>
                     <div className="custom-profile-auxiliary">
                         <div className={"header-menu-button"}>
-                            <button className={"header-button-name"} style={{ width: '210px'}}>Menu</button>
+                            <button className={"header-button-name"}>Menu</button>
                             {' '}
                         </div>
 
@@ -50,7 +50,7 @@ const CustomProfile = () => {
                                 <button className={"header-dropdown-button"} onClick={profile}>Profile</button>
                             </li>
                             <li>
-                                <button className={"header-dropdown-button white"}>Settings</button>
+                                <button className={"header-dropdown-button gray"}>Settings</button>
                             </li>
                             <li>
                                 <button className={"header-dropdown-button red"} onClick={logout}>Log out</button>
