@@ -45,13 +45,14 @@ const CustomProfile = () => {
                             {' '}
                         </div>
 
+
                         <ul className={"header-dropdown"}>
                             <li>
                                 <button className={"header-dropdown-button"} onClick={profile}>Profile</button>
                             </li>
-                            <li>
-                                <button className={"header-dropdown-button gray"}>Settings</button>
-                            </li>
+                            {/*<li>*/}
+                            {/*    <button className={"header-dropdown-button gray"}>Settings</button>*/}
+                            {/*</li>*/}
                             <li>
                                 <button className={"header-dropdown-button red"} onClick={logout}>Log out</button>
                             </li>
