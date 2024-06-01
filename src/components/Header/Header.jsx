@@ -14,6 +14,10 @@ const Header = () => {
         navigate("/main");
     }
 
+    function equationSolver() {
+        navigate("/equationSolver");
+    }
+
     function help() {
         navigate("/help");
     }
@@ -37,13 +41,11 @@ const Header = () => {
                     <div>
                         <ul className={"header-dropdown-methods"}>
                             <li>
-                                <button className={"header-dropdown-button-methods"}>Linear System</button>
-                            </li>
-                            <li>
-                                <button className={"header-dropdown-button-methods"}>Linear System</button>
-                            </li>
-                            <li>
-                                <button className={"header-dropdown-button-methods"}>Linear System</button>
+                                <CustomHeaderButton
+                                    style={{background: '#260B0A'}}
+                                    buttonName={"Linear System"}
+                                    onClick={equationSolver}
+                                />
                             </li>
                         </ul>
                     </div>
