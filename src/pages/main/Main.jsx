@@ -46,29 +46,40 @@ const Main = () => {
 
     function startCalculation(equation) {
         console.log("startCalculation");
+
         const formData = new FormData();
-        formData.append('matrixFile', matrixFile);
-        formData.append('vectorFile', vectorFile);
-        console.log(formData)
-        return axios.post("http://localhost:8765/business-logic/api/v1/equation", formData, {
-            headers: {
-                authorization: "Bearer " + AuthToken["token"]
-            }
-        })
-            .then((response) => {
-                const data = response.data;
-                setInterface_([...interface_, {
-                    ...equation,
-                    id: data.id,
-                    start_calculation: data.startCalculation.substring(0, 19)
-                }])
-            })
-            .catch((error) => {
-                if (error.response) {
-                    console.log(error.message)
-                    console.log("error")
+        if (matrixFile && vectorFile) {
+            formData.append('matrixFile', matrixFile);
+            formData.append('vectorFile', vectorFile);
+
+            console.log(formData);
+
+            return axios.post("http://localhost:8765/business-logic/api/v1/equation", formData, {
+                headers: {
+                    authorization: "Bearer " + AuthToken["token"]
                 }
-            });
+            })
+                .then((response) => {
+                    const data = response.data;
+                    setInterface_([...interface_, {
+                        ...equation,
+                        id: data.id,
+                        start_calculation: data.startCalculation.substring(0, 19)
+                    }])
+                })
+                .catch((error) => {
+                    if (error.response) {
+                        console.log(error.message);
+                        console.log("error");
+                    }
+                });
+        } else {
+            let errors = {}
+            console.log("Files are not attached");
+            errors.files = "Please select matrix and vector files."
+            setErrors(errors)
+            console.log(errors.files);
+        }
     }
 
     const handleMatrixFileChange = (event) => {
@@ -155,6 +166,9 @@ const Main = () => {
                             className={"main-span-yellow"}>Calculate</span>" to start calculating your linear system
                         </div>
 
+                        {errors.files && <p className='input_error'>
+                            {errors.files}
+                        </p>}
                         <div className={"main-auxiliary-form-container"}>
                             <div className={"main-file-name-inputs"}>
                                 <div className={"main-file-name"}>
