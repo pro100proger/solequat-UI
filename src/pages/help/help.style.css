@@ -1,3 +1,10 @@
+.help-page {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+}
+
 .help-container {
     height: 100%;
     padding: 140px 20px 20px 0;
@@ -9,4 +16,46 @@
     border-radius: 12px;
     margin: 1px auto 0 auto;
     background-color: #260B0A;
+}
+
+.help-help-headline {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 36px;
+    color: #FF8E45;
+
+    padding-bottom: 15px;
+    margin: 0 100px;
+    border-bottom: #3B1B19 1px solid;
+}
+
+
+.help-explanation-container {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.help-explanation-headline {
+    padding-top: 25px;
+    padding-bottom: 20px;
+
+    font-size: 28px;
+    color: #FFCE76;
+}
+.help-explanation-text {
+    font-size: 22px;
+    color: #D9D9D9;
+
+    padding-bottom: 30px;
+    border-bottom: #3B1B19 1px solid;
+}
+.help-profile-text {
+    padding-bottom: 20px;
+}
+.help-profile-functionalities {
+    padding-bottom: 8px;
+}
+
+
+.help-bottom {
+    padding-bottom: 80px;
 }
