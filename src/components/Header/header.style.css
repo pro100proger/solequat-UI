@@ -20,6 +20,7 @@
 .header-dropdown-methods {
     margin-top: 0;
     padding-left: 0;
+    width: 160px;
 
     list-style: none;
     border: #452015 2px solid;

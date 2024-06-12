@@ -15,7 +15,10 @@ const Header = () => {
     }
 
     function equationSolver() {
-        navigate("/equationSolver");
+        navigate("/equation");
+    }
+    function eigenvaluesSolver() {
+        navigate("/eigenvalues");
     }
 
     function help() {
@@ -45,6 +48,13 @@ const Header = () => {
                                     style={{background: '#260B0A'}}
                                     buttonName={"Linear System"}
                                     onClick={equationSolver}
+                                />
+                            </li>
+                            <li>
+                                <CustomHeaderButton
+                                    style={{background: '#260B0A'}}
+                                    buttonName={"Eigenvalues"}
+                                    onClick={eigenvaluesSolver}
                                 />
                             </li>
                         </ul>

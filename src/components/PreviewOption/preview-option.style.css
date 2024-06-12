@@ -1,6 +1,72 @@
 .preview-container {
+    display: flex;
+    justify-content: space-between;
+}
+.preview-auxiliary-container {
+    width: 360px;
+}
+
+
+.preview-balance-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.preview-balance {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    color: #FFCE76;
+}
+.preview-balance-value {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    color: #D9D9D9;
+}
+.preview-balance-tip {
+    padding-top: 26px;
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #D9D9D9;
+}
+
+#paypal-button-container {
+    text-align: center;
+    padding-top: 30px;
+}
+
+#paypal-button {
+    background-color: #FFC439;
+    color: #111;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 16px 105px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#paypal-button:hover {
+    background-color: #FFB31A;
+}
+
+#paypal-button:active {
+    background-color: #E0A800;
+}
+
+
+.preview-credentials {
     width: 360px;
 
+    padding-left: 100px;
     padding-top: 10px;
 }
 

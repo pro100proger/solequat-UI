@@ -9,7 +9,7 @@ const Main = () => {
     const navigate = useNavigate();
 
     function equationSolver() {
-        navigate("/equationSolver");
+        navigate("/equation");
     }
 
 
