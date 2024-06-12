@@ -6,6 +6,7 @@ import Registration from "./pages/registration/Registration";
 import Profile from "./pages/profile/Profile";
 import Help from "./pages/help/Help";
 import EquationSolver from "./pages/calculatingPages/equationSolver/equationSolver";
+import EigenvaluesSolver from "./pages/calculatingPages/eigenvaluesSolver/eigenvaluesSolver";
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
           <Route path="/">
               <Route path="/" element={<Main/>}/>
               <Route path="main" element={<Main/>}/>
-              <Route path="equationSolver" element={<EquationSolver/>}/>
+              <Route path="equation" element={<EquationSolver/>}/>
+              <Route path="eigenvalues" element={<EigenvaluesSolver/>}/>
               <Route path="registration" element={<Registration/>}/>
               <Route path="login" element={<Login/>}/>
               <Route path="profile" element={<Profile/>}/>
